@@ -68,3 +68,21 @@ or
 ``k apply -f nginx.yaml``
 
 The difference between "create" and "apply" are that "create" only creates the pod. Apply will detect the changes between the two, and then modify them.
+
+Quick tip you can also find yaml files on kubernetest documentation.
+Do a ``ctrl+f`` and search for "apiver".
+In the K8 doc go to pods and do your ``ctrl+f`` or ``/``
+https://kubernetes.io/docs/concepts/workloads/pods/
+
+A nice little trick from Mesha:
+In VIM if your paste into vim looks wrong in formatting.
+Delete everything by ``d gg``
+In VIM ``:set paste``, then go into insert mode ``i``, and paste your clipboard. This should already be in .vimrc file.
+A nice little trick from Mesha:
+In VIM if your paste into vim looks wrong in formatting.
+Delete everything by ``d gg``
+In VIM ``:set paste``, then go into insert mode ``i``, and paste your clipboard. This should already be in .vimrc file.
+You can also run ``:set wrap`` to set word wrapping in vim.
+
+
+
