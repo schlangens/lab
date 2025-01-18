@@ -23,3 +23,6 @@ echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 
 - Also install tmux and vim if not installed
 
+- Uploaded all .dot files (.vimrc .bashrc .tmux.conf)
+
+
