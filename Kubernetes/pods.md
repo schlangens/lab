@@ -4,7 +4,7 @@ Pods are the smallest element on a Kubernetes Cluster
 
 Pods of Whales
 
-A pod not a container
+A pod is not a container
 
 A pod is a collection of containers + more
 
@@ -25,17 +25,17 @@ Kubectl has written a config file in Home
 
 Alias kgp = Kubectl Get Pods
 
-# Create custom POD on cluser
+# Create custom POD on cluster
 
-kubectl run httpd-sschlangen --image=httpd
-k run httpd-sschlangen --image=httpd
+``kubectl run httpd-sschlangen --image=httpd``
+``k run httpd-sschlangen --image=httpd``
 
-kubctl run nginx-sschlangen --image=nginx
-k run nginx-sschlangen --image=nginx
+``kubctl run nginx-sschlangen --image=nginx``
+``k run nginx-sschlangen --image=nginx``
 
 From now on we will use the ``k`` alias for ``kubectl``
 
-The pod gets on the Node from the scheduler on the Control Plane
+The pod is put on the node from the scheduler on the Control Plane
 The Control Plane uses the API server to send the request to the Scheduler
 
 ``k describe pod httpd-sschlangen``
@@ -56,7 +56,7 @@ The Control Plane uses the API server to send the request to the Scheduler
 
 ``k run -h | less``
 
-You can run then search ``/dry run`` to filter on results (n --> Next one, or N --> previous)
+You can run then search ``/dry-run`` to filter on results (n --> Next one, or N --> previous)
 
 
 You can make a quick yaml file by piping dry run client into a yaml file
@@ -67,4 +67,4 @@ To create a pod on the cluster
 or
 ``k apply -f nginx.yaml``
 
-The difference between those Create only creates the pod. Apply will detect the changes between the two, and then modify them.
+The difference between "create" and "apply" are that "create" only creates the pod. Apply will detect the changes between the two, and then modify them.
