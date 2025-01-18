@@ -19,5 +19,7 @@ echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 
 ``brew install gcc``
 
+``sudo pacman -Syu k9s``
 
+- Also install tmux and vim if not installed
 
