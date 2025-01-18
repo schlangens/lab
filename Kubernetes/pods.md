@@ -99,7 +99,7 @@ Check to make sure pod was removed
 
 ``kgp``
 
-``k get pods```
+``k get pods``
 
 ``kubectl get pods``
 
