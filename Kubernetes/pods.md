@@ -85,4 +85,75 @@ In VIM ``:set paste``, then go into insert mode ``i``, and paste your clipboard.
 You can also run ``:set wrap`` to set word wrapping in vim.
 
 
+## Interacting with PODS
+
+Its very important to learn to execute into the pod.
+
+``k get pods -o wide``
+
+Lets say we need to delete a pod because we have so many of them.
+
+``k delete pod nginx``
+
+Check to make sure pod was removed
+
+``kgp``
+
+``k get pods```
+
+``kubectl get pods``
+
+Now we can get into a POD very similar to docker
+
+``k exec -it nginx-docs -- /bin/bash``
+
+It can also be
+
+``k exec -it nginx-docs -- /bin/sh``
+
+To check the shell you can run ``echo $SHELL``
+
+Check the linux version with
+``cat /etc/os-release``
+
+To get out of a container
+``ctrl+d`` or ``exit``, or use the alias ``e``
+
+Remember you can always type ``k exec -h | less`` to get help in the documents and use ``/`` to search and filter. This is key for success in kubernetes exam.
+## Interacting with PODS
+
+Its very important to learn to execute into the pod.
+
+``k get pods -o wide``
+
+Lets say we need to delete a pod because we have so many of them.
+
+``k delete pod nginx``
+
+Check to make sure pod was removed
+
+``kgp``
+
+``k get pods```
+
+``kubectl get pods``
+
+Now we can get into a POD very similar to docker
+
+``k exec -it nginx-docs -- /bin/bash``
+
+It can also be
+
+``k exec -it nginx-docs -- /bin/sh``
+
+To check the shell you can run ``echo $SHELL``
+
+Check the linux version with
+``cat /etc/os-release``
+
+To get out of a container
+``ctrl+d`` or ``exit``, or use the alias ``e``
+
+Remember you can always type ``k exec -h | less`` to get help in the documents and use ``/`` to search and filter. This is key for success in kubernetes exam.
+
 
