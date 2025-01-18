@@ -16,9 +16,9 @@ A pod is a collection of containers + more
 
 # Common Commands
 
-``kubctl get pods``
+``k get pods``
 
-``kubctl get pods -A``
+``k get pods -A``
 
 Kubectl has written a config file in Home
 ``~/.kube/config``
@@ -30,7 +30,7 @@ Alias kgp = Kubectl Get Pods
 ``kubectl run httpd-sschlangen --image=httpd``
 ``k run httpd-sschlangen --image=httpd``
 
-``kubctl run nginx-sschlangen --image=nginx``
+``kubectl run nginx-sschlangen --image=nginx``
 ``k run nginx-sschlangen --image=nginx``
 
 From now on we will use the ``k`` alias for ``kubectl``
