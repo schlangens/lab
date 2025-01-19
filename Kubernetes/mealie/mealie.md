@@ -18,5 +18,13 @@ This was added to our deployment file - from the mealie doc we had to change the
           - containerPort: 9000
 ```
 
+Now Apply the deployment
+``k apply -f mealie-deploy.yaml``
+
+We use a port forward to connect to that app
+``k port-forward -h | less``
+``k port-forward <tab> <tab> 9000``
+
+
 
 
