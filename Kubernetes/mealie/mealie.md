@@ -25,6 +25,8 @@ We use a port forward to connect to that app
 ``k port-forward -h | less``
 ``k port-forward <tab> <tab> 9000``
 
+- Another trick from Misha - In VIM select the character you want to replace and then hit ``r`` and the chracter you want to replace.
+- After updating a version you will need to apply it. ``k apply -f mealie-deploy.yaml``
 
 
 
