@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first-deployment
+  name: first-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: first-deployment
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first-deployment
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: {}
+status: {}

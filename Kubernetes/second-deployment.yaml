@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: first-deployment
+  name: first-deployment
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: first-deployment
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 1
+      maxSurge: 1
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: first-deployment
+    spec:
+      containers:
+      - image: httpd
+        name: httpd
+        resources: {}
+status: {}
