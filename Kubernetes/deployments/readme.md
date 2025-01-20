@@ -20,9 +20,9 @@ echo "eval \"\$($(brew --prefix)/bin/brew shellenv)\"" >> ~/.bashrc
 ``brew install gcc``
 
 ### Specific to my prompt and .bashrc file
-``sudo pacman -Syu k9s``
-``sudo pacman -S go``
-``go install github.com/justjanne/powerline-go@latest``
+- ``sudo pacman -Syu k9s``
+- ``sudo pacman -S go``
+- ``go install github.com/justjanne/powerline-go@latest``
 
 
 - Also install tmux and vim if not installed
