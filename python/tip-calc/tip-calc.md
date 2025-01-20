@@ -9,8 +9,3 @@ Each person should pay:
 
 After formatting the result to 2 decimal places = 33.60
 
-Demo
-https://appbrewery.github.io/python-day2-demo/
-
-Very Optional Reading: Floating Point Arithmetic
-https://docs.python.org/3/tutorial/floatingpoint.html
