@@ -1,0 +1,75 @@
+## Storage
+Persistent - Media saved in volumes. Survives reboot
+Ephermeral - lives as long as the pod does
+
+``k describe pods <tab>``
+
+```
+Volumes:
+  kube-api-access-sm28h:
+    Type:                    Projected (a volume that contains injected data from multiple sources)
+    TokenExpirationSeconds:  3607
+    ConfigMapName:           kube-root-ca.crt
+    ConfigMapOptional:       <nil>
+    DownwardAPI:             true
+QoS Class:                   BestEffort
+```
+
+```
+kind: Pod
+metadata:
+  labels:
+  name: nginx-storage
+spec:
+  containers:
+   - image: nginx
+     name: nginx
+     volumeMounts:
+      - mountPath: /scratch
+        name: scratch-volume
+  volumes:
+    - name: scratch-volume
+      emptyDir:
+        sizeLimit: 500Mi
+```
+
+For a Pod that defines an emptyDir volume, the volume is created when the Pod is assigned to a node. As the name says, the emptyDir volume is initially empty. All containers in the Pod can read and write the same files in the emptyDir volume, though that volume can be mounted at the same or different paths in each container. When a Pod is removed from a node for any reason, the data in the emptyDir is deleted permanently
+
+- Tip in VIM select the entire line ``<shift + v> then down/up in vim then ``y`` the ``p`` to paste.
+
+- When you make changes to a yaml file such as adding more containers to a pod. You will first have to delete the running pod to apply the new code.
+
+``k delete pod <tab>``
+
+``k apply -f nginx-pod.yaml``
+
+Our new nginx-pod yaml file should look like the following:
+
+```
+apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+  name: nginx-storage
+spec:
+  containers:
+   - image: nginx
+     name: nginx
+     volumeMounts:
+      - mountPath: /scratch
+        name: scratch-volume
+   - image: busybox
+     name: busybox
+     command: ["/bin/sh", "-c"]
+     arg: ["sleep 1000"]
+     volumeMounts:
+      - mountPath: /scratch
+        name: scratch-volume
+  volumes:
+    - name: scratch-volume
+      emptyDir:
+        sizeLimit: 500Mi
+```
+
+
+
