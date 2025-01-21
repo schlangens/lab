@@ -43,7 +43,7 @@ For a Pod that defines an emptyDir volume, the volume is created when the Pod is
 
 ``k apply -f nginx-pod.yaml``
 
-Our new nginx-pod yaml file should look like the following:
+Our new nginx-pod yaml file should look like the following:t 
 
 ```
 apiVersion: v1
@@ -71,5 +71,16 @@ spec:
         sizeLimit: 500Mi
 ```
 
+
+Remember if you want to get into the VM
+- ``k exec -it nginx-storage -c nginx -- bash``
+- ``k exec -it nginx-storage -c busybox -- sh``. Uses posix shell (slim version of bash shell (Bourne Again Shell) ``(/bin/sh)``, ``which sh``.
+
+
+### Persistent Volumes
+Like a huge disk living in your cluster
+
+### Persistent Volume Claims
+Explained as having a small claim of that large persistent disk.
 
 
