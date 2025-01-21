@@ -82,5 +82,61 @@ Like a huge disk living in your cluster
 
 ### Persistent Volume Claims
 Explained as having a small claim of that large persistent disk.
+- Can be provisioned dynamically or before-hand
+
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mealie-data
+  namespace: mealie
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+```
+
+- ``k apply -f mealie-storage.yaml``
+
+- ``k get persistentvolumeclaims``
+
+Its pending because we have not attached to our POD.
+
+``k get pvc``
+- Get PersistentVolumeClaims
+
+Lets edit the mealie-deployment.yaml file
+
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mealie-data
+  namespace: mealie
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 500Mi
+```
+
+``k get pvc``
+
+## Storageclass
+``k get storageclasses<tab>``
+- ``local-path`` - config by Rancher
+
+## Access Modes
+In the CLI, the access modes are abbreviated to:
+
+RWO - ReadWriteOnce
+ROX - ReadOnlyMany
+RWX - ReadWriteMany
+RWOP - ReadWriteOncePod
+
+https://kubernetes.io/docs/concepts/storage/persistent-volumes/#access-modes
 
 
